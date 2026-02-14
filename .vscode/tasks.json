@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"path": "frontend",
+			"problemMatcher": [ ],
+			"label": "npm: dev - frontend",
+			"detail": "vite"
+		},
+		{
+			"type": "shell",
+			"label": "Run FastAPI Server",
+			"problemMatcher": [ ],
+			"command": "${workspaceFolder}/api/.venv/Scripts/python.exe",
+			"args": [
+				"-m",
+				"uvicorn",
+				"api.hello:app",
+				"--reload",
+				"--port",
+				"8000"
+			],
+		}
+	]
+}
