@@ -3,20 +3,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function FunctionApp() {
+function ApiContent({ endpoint, name, children }: { endpoint: string, name: string, children?: React.ReactNode }) {
   const [msg, setMsg] = useState("Loading...");
 
   useEffect(() => {
-    fetch("/api/hello?name=Chris")
+    fetch(`/api/${endpoint}?name=${name}`)
       .then((r) => r.json())
       .then((j) => setMsg(j.message))
       .catch((e) => setMsg(String(e)));
-  }, []);
+  }, [endpoint, name]);
 
   return (
     <div style={{ padding: 24 }}>
       <h1>{msg}</h1>
-      <p>React + Vite frontend, Python (FastAPI) serverless backend on Vercel.</p>
+      {children}
     </div>
   );
 }
@@ -46,7 +46,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <FunctionApp />
+      <ApiContent endpoint="hello" name="Chris">
+        <p>React + Vite frontend, Python (FastAPI) serverless backend on Vercel.</p>
+      </ApiContent>
+      <ApiContent endpoint="goodbye" name="Chris" />
     </>
   )
 }
