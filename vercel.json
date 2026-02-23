@@ -4,8 +4,5 @@
   "devCommand": "cd frontend && npm run dev",
   "env": {
     "PYTHONUNBUFFERED": "1"
-  },
-  "api": {
-    "baseUrl": "/api"
   }
 }
