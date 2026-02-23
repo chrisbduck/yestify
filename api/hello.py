@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
-app = FastAPI()
+app = FastAPI(title="Vercel + FastAPI", description="Vercel + FastAPI", version="1.0.0")
 
 @app.get("/api/hello")
 def hello(name: str = "world"):
