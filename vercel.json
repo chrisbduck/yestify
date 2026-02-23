@@ -1,8 +1,11 @@
 {
   "buildCommand": "cd frontend && npm run build",
   "outputDirectory": "frontend/dist",
-  "devCommand": "npm run dev",
+  "devCommand": "cd frontend && npm run dev",
   "env": {
     "PYTHONUNBUFFERED": "1"
+  },
+  "api": {
+    "baseUrl": "/api"
   }
 }

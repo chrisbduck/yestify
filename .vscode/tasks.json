@@ -17,7 +17,7 @@
 			"args": [
 				"-m",
 				"uvicorn",
-				"api.hello:app",
+				"api.index:app",
 				"--reload",
 				"--port",
 				"8000"
